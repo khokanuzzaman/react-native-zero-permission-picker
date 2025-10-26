@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# TypeScript
+lib/
+*.d.ts
+*.js
+!example/**/*.js
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+*.xcworkspace
+*.xcodeproj/xcuserdata/
+DerivedData/
+build/
+
+# Android
+android/.gradle/
+android/local.properties
+android/build/
+android/.idea/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+.env
+.env.local
+.env.*.local

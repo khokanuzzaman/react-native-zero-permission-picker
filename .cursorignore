@@ -1,0 +1,9 @@
+node_modules/
+.git/
+lib/
+build/
+dist/
+ios/Pods/
+android/.gradle/
+*.lock
+.DS_Store

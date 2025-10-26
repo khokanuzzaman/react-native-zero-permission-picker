@@ -1,0 +1,31 @@
+{
+  "buildFiles": [
+    "/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/khokan/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/khokan/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "appmodules::@6890427a1f51a3e7e1df": {
+      "artifactName": "appmodules",
+      "abi": "x86",
+      "output": "/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/40w3e364/obj/x86/libappmodules.so",
+      "runtimeFiles": [
+        "/Users/khokan/.gradle/caches/9.0.0/transforms/5fa135f9220cf0ae1e3ee40cd371125b/transformed/fbjni-0.7.0/prefab/modules/fbjni/libs/android.x86/libfbjni.so",
+        "/Users/khokan/.gradle/caches/9.0.0/transforms/ea12ac1f332b31fb5e1a55c985795b89/transformed/react-android-0.82.0-debug/prefab/modules/jsi/libs/android.x86/libjsi.so",
+        "/Users/khokan/.gradle/caches/9.0.0/transforms/ea12ac1f332b31fb5e1a55c985795b89/transformed/react-android-0.82.0-debug/prefab/modules/reactnative/libs/android.x86/libreactnative.so"
+      ]
+    }
+  }
+}

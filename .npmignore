@@ -1,0 +1,47 @@
+# Source files (only include compiled lib/)
+src/
+*.ts
+*.tsx
+
+# Development files
+example/
+node_modules/
+.git/
+.gitignore
+.travis.yml
+.github/
+
+# Build artifacts
+android/build/
+android/build/**
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+jest.config.js
+
+# Documentation (keep README.md)
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# Temporary files
+tmp/
+temp/

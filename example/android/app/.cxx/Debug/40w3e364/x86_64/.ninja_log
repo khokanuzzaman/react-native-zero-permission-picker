@@ -1,0 +1,15 @@
+# ninja log v5
+8	2382	1761460336506351644	CMakeFiles/appmodules.dir/OnLoad.cpp.o	4d1d4102aa1803cf
+0	7	0	clean	f5fbc52e3fd7e9dd
+2383	2455	1761460336584411007	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/40w3e364/obj/x86_64/libappmodules.so	3ea32de58f5d7c01
+15	194	1761483056294688539	build.ninja	ae0a4cedc058952a
+0	13	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4
+9	2203	1761460336329910513	CMakeFiles/appmodules.dir/Users/khokan/Desktop/npm_packages/react-native-zero-permission-picker/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	a63f1f4716b3b7
+1	11	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4
+10	2348	1761483058674504281	CMakeFiles/appmodules.dir/Users/khokan/Desktop/npm_packages/react-native-zero-permission-picker/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	a63f1f4716b3b7
+10	2549	1761483058872515847	CMakeFiles/appmodules.dir/OnLoad.cpp.o	4d1d4102aa1803cf
+2549	2621	1761483058952053543	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/40w3e364/obj/x86_64/libappmodules.so	3ea32de58f5d7c01
+1	10	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4
+1	12	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4
+1	10	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4
+0	10	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86_64/CMakeFiles/cmake.verify_globs	9787db17a5e666b4

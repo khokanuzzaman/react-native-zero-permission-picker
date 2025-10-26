@@ -1,0 +1,15 @@
+# ninja log v5
+4047	4115	1761460333881293457	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/40w3e364/obj/x86/libappmodules.so	e8ed8fb0f0d1d0a1
+16	4047	1761460333807768132	CMakeFiles/appmodules.dir/OnLoad.cpp.o	5df8ac9cc41e3708
+0	7	0	clean	f5fbc52e3fd7e9dd
+16	3876	1761460333639051170	CMakeFiles/appmodules.dir/Users/khokan/Desktop/npm_packages/react-native-zero-permission-picker/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	88e01aed92f4629f
+0	9	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f
+19	393	1761483053232588183	build.ninja	2e964b3a8bc41b7
+1	10	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f
+9	2050	1761483055311819734	CMakeFiles/appmodules.dir/Users/khokan/Desktop/npm_packages/react-native-zero-permission-picker/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	88e01aed92f4629f
+9	2210	1761483055472101567	CMakeFiles/appmodules.dir/OnLoad.cpp.o	5df8ac9cc41e3708
+2211	2277	1761483055542456880	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/40w3e364/obj/x86/libappmodules.so	e8ed8fb0f0d1d0a1
+0	6	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f
+0	7	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f
+1	7	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f
+1	7	0	/Users/khokan/Desktop/npm packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/40w3e364/x86/CMakeFiles/cmake.verify_globs	90233a149b64092f

@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.*
+yarn-error.*
+
+# Build
+build/
+dist/
+android/app/debug/
+android/app/release/
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+*.xcworkspace
+*.xcodeproj/xcuserdata/
+DerivedData/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.DS_Store
+
+# Metro
+.metro-health-check*
