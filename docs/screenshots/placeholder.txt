@@ -1,0 +1,35 @@
+# Screenshot Placeholders
+
+This file lists the required screenshots that need to be captured:
+
+## Required Screenshots
+
+### Example App (5 screenshots)
+- example-app-main.png - Main screen with all buttons
+- example-app-images.png - Image picker in action
+- example-app-videos.png - Video picker in action  
+- example-app-files.png - File picker in action
+- example-app-results.png - Results display with metadata
+
+### Platform Pickers (4 screenshots)
+- android-photo-picker.png - Android 13+ Photo Picker
+- android-saf-picker.png - Android ≤12 Storage Access Framework
+- ios-phpicker.png - iOS 16+ PHPickerViewController
+- ios-image-picker.png - iOS 15 UIImagePickerController
+
+### Permissions (2 screenshots)
+- no-permissions-android.png - Android app settings showing no permissions
+- no-permissions-ios.png - iOS app settings showing no permissions
+
+## Total: 11 screenshots needed
+
+## Instructions
+1. Run the example app on real devices
+2. Take screenshots following the guide in scripts/take-screenshots.md
+3. Save images in this directory with exact filenames listed above
+4. Optimize images for web (compress to <500KB each)
+5. Commit and push to GitHub
+
+## Temporary Placeholders
+Until real screenshots are taken, the documentation will show broken image links.
+This is normal and expected - replace with actual screenshots when available.
