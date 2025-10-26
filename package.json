@@ -1,7 +1,7 @@
 {
   "name": "react-native-zero-permission-picker",
   "version": "0.1.0",
-  "description": "Zero-permission file picker for React Native - images, videos, and files on iOS and Android without storage permissions",
+  "description": "Zero-permission file picker for React Native - select images, videos, and documents on iOS and Android without requesting storage permissions. Modern Photo Picker API, Storage Access Framework, PHPicker support.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
