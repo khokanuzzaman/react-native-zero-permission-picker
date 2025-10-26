@@ -35,6 +35,7 @@
     "typescript": "^5.0.0"
   },
   "keywords": [
+    "react-native-zero-permission-picker",
     "react-native",
     "file-picker",
     "photo-picker",
