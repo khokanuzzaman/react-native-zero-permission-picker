@@ -58,6 +58,8 @@ This will:
 When the app launches, you'll see:
 
 ### Main Screen
+![Main Screen](../docs/screenshots/example-app-main.jpeg)
+
 - **Header**: "Zero Permission Picker" with description
 - **Media Picking Section** with 3 buttons:
   - Pick Images
@@ -76,6 +78,7 @@ When the app launches, you'll see:
 2. **System picker opens** - Native Android/iOS file picker appears
 3. **Select files** - Choose one or multiple files
 4. **Results display** below showing:
+   ![Selected Items](../docs/screenshots/selected-item.jpeg)
    - Thumbnails for images
    - File metadata (name, size, dimensions, etc.)
    - URI for each selected file

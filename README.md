@@ -7,7 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/khokanuzzman/react-native-zero-permission-picker.svg)](https://github.com/khokanuzzman/react-native-zero-permission-picker)
 
 <div align="center">
-  <img src="docs/screenshots/example-app-main.png" alt="React Native Zero Permission Picker Demo" width="300" />
+  <img src="docs/screenshots/example-app-main.jpeg" alt="React Native Zero Permission Picker Demo" width="300" />
   
   <h3>🚀 Zero-Permission File Picker for React Native</h3>
   
@@ -25,19 +25,19 @@
   <table>
     <tr>
       <td align="center">
-        <img src="docs/screenshots/android-photo-picker.png" alt="Android Photo Picker" width="200" />
-        <br/><strong>Android Photo Picker</strong>
-        <br/><small>API 33+ • Zero Permissions</small>
+        <img src="docs/screenshots/example-app-main.jpeg" alt="Main App Interface" width="200" />
+        <br/><strong>Main Interface</strong>
+        <br/><small>All Picker Options</small>
       </td>
       <td align="center">
-        <img src="docs/screenshots/ios-phpicker.png" alt="iOS PHPicker" width="200" />
-        <br/><strong>iOS PHPicker</strong>
-        <br/><small>iOS 16+ • Zero Permissions</small>
+        <img src="docs/screenshots/selected-item.jpeg" alt="Selected Items Display" width="200" />
+        <br/><strong>Selected Items</strong>
+        <br/><small>Rich Metadata Display</small>
       </td>
       <td align="center">
-        <img src="docs/screenshots/example-app-results.png" alt="Results Display" width="200" />
-        <br/><strong>Rich Metadata</strong>
-        <br/><small>Size • Dimensions • Duration</small>
+        <img src="docs/screenshots/example-app-main.jpeg" alt="Zero Permissions" width="200" />
+        <br/><strong>Zero Permissions</strong>
+        <br/><small>No Storage Access Needed</small>
       </td>
     </tr>
   </table>
@@ -106,20 +106,12 @@ const images = await pickMedia('image', { multiple: true });
 
 ## 📱 Screenshots
 
-### Example App Demo
-| Main Screen | Image Picker | Results Display |
-|-------------|--------------|-----------------|
-| ![Main Screen](docs/screenshots/example-app-main.png) | ![Image Picker](docs/screenshots/example-app-images.png) | ![Results](docs/screenshots/example-app-results.png) |
+### App Interface
+| Main Screen | Selected Items |
+|-------------|----------------|
+| ![Main Screen](docs/screenshots/example-app-main.jpeg) | ![Selected Items](docs/screenshots/selected-item.jpeg) |
 
-### Platform-Specific Pickers
-| Android Photo Picker (API 33+) | Android SAF (≤12) | iOS PHPicker (16+) |
-|--------------------------------|-------------------|-------------------|
-| ![Android Photo Picker](docs/screenshots/android-photo-picker.png) | ![Android SAF](docs/screenshots/android-saf-picker.png) | ![iOS PHPicker](docs/screenshots/ios-phpicker.png) |
-
-### Zero Permissions
-| Android App Info | iOS App Info |
-|------------------|--------------|
-| ![No Android Permissions](docs/screenshots/no-permissions-android.png) | ![No iOS Permissions](docs/screenshots/no-permissions-ios.png) |
+*The app provides a clean interface for selecting files with zero permissions required.*
 
 ## 🚀 Quick Start
 
