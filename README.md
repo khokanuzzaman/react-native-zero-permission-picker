@@ -1,4 +1,4 @@
-# react-native-zero-permission-picker
+# React Native Zero Permission Picker
 
 [![npm version](https://badge.fury.io/js/react-native-zero-permission-picker.svg)](https://badge.fury.io/js/react-native-zero-permission-picker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -43,7 +43,7 @@
   </table>
 </div>
 
-> **Modern APIs** - Uses Android Photo Picker (API 33+), iOS PHPicker (iOS 16+), and Storage Access Framework for seamless file selection without permissions.
+> React Native image, video, and document picker with ZERO permissions. Uses Android Photo Picker (API 33+), iOS PHPicker, and Storage Access Framework (SAF) for seamless, privacy-friendly selection.
 
 ## ⚡ **Installation**
 
@@ -64,12 +64,15 @@ import { pickMedia, pickFiles } from 'react-native-zero-permission-picker';
 const images = await pickMedia('image', { multiple: true });
 ```
 
-## 🎯 **Why Choose This Package?**
+## 🎯 Why choose this over other pickers?
 
-- **🚫 Zero Permissions** - No storage/photo/video permissions required
-- **📱 Modern APIs** - Android Photo Picker (API 33+) & iOS PHPicker (iOS 16+)
-- **🔄 Backward Compatible** - SAF fallback for Android ≤12, UIImagePickerController for iOS 15
-- **⚡ Production Ready** - TypeScript support, comprehensive error handling, extensive testing
+- **🚫 Zero permissions**: No storage/photo/video permission prompts
+- **📱 Modern APIs**: Android Photo Picker (API 33+) & iOS PHPicker
+- **🔄 Compatible**: SAF fallback for Android ≤12, UIImagePickerController for iOS 15
+- **🧩 Simple API**: Tiny surface area with sensible defaults
+- **⚡ Production ready**: TypeScript types, validation, tests
+
+> Looking for: “react native image picker”, “react native document picker”, or “android 13 photo picker”? This module provides a single, permissionless API that covers those use‑cases using platform system pickers.
 
 ## 📋 **Table of Contents**
 
@@ -94,15 +97,20 @@ const images = await pickMedia('image', { multiple: true });
 
 ## ✨ Features
 
-- 🚫 **Zero Runtime Permissions** - No storage/photo/video permissions required
-- 📱 **Modern APIs** - Uses Android Photo Picker (API 33+) and iOS PHPicker (iOS 16+)
-- 🔄 **Backward Compatible** - Falls back to SAF (Android ≤12) and UIImagePickerController (iOS 15)
+- 🚫 **Zero permissions** – no storage/photo/video prompts
+- 📱 **Modern APIs** – Android Photo Picker + iOS PHPicker
+- 🔄 **Backwards compatible** – SAF on Android ≤12, UIImagePickerController on iOS 15
 - 🎯 **Multiple Selection** - Pick multiple files at once
 - 🖼️ **Image Processing** - Optional compression and EXIF stripping
 - 📊 **Rich Metadata** - File size, dimensions, duration, MIME type
 - 💾 **File Caching** - Automatic cache management
 - 🔧 **TypeScript** - Full type safety
 - ⚡ **Lightweight** - Minimal dependencies
+
+### Compared to popular alternatives
+
+- react-native-image-picker: requires permissions for some flows; this uses system photo picker with scoped access.
+- react-native-document-picker: great for documents; this unifies media + docs in one minimal API with modern platform pickers.
 
 ## 📱 Screenshots
 
@@ -384,6 +392,10 @@ npm run lint
 ## 📄 License
 
 MIT - see [LICENSE](LICENSE) for details.
+
+## 🔎 Discoverability (search terms)
+
+React Native image picker, React Native file picker, React Native document picker, Android 13 Photo Picker, iOS PHPicker, Storage Access Framework (SAF), permissionless picker, no storage permission, gallery picker, media picker, UIDocumentPicker.
 
 ## 🤝 Contributing
 
