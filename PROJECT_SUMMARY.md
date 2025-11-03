@@ -68,7 +68,7 @@ All components have been implemented and documented.
 ### 3. iOS Native Module (`ios/`)
 
 #### `ios/RNZeroPermissionPicker.swift` ✅
-- `@objc pickMedia()` - iOS 16+ PHPickerViewController, iOS 15 UIImagePickerController
+- `@objc pickMedia()` - iOS 16+ PHPickerViewController, iOS 14/15 UIImagePickerController fallback
 - `@objc pickFiles()` - UIDocumentPickerViewController for all file types
 - `@objc isSystemPhotoPickerAvailable()` - Always returns true
 - `@objc clearCachedFiles()` - Clears cached files
@@ -78,20 +78,20 @@ All components have been implemented and documented.
 **Delegates**:
 - `PickerDelegate` (PHPickerViewController)
 - `DocumentPickerDelegate` (UIDocumentPickerViewController)
-- `ImagePickerDelegate` (UIImagePickerController for iOS 15)
+- `ImagePickerDelegate` (UIImagePickerController for iOS 14/15)
 
 **Extensions**:
 - `UIImage.withoutExif()` - EXIF removal helper
 
 #### `ios/PickerFileHelper.swift` ✅
-- `saveImageData()` - Saves compressed images
-- `getPickedItemMap()` - Extracts metadata
-- `clearCache()` - Clears cache directory
-- `getMimeType()` - Maps file extensions to MIME types
+- `persistFile()` / `writeData()` - Guarantees readable URIs in cache or temp storage
+- `processImageIfNeeded()` - Handles EXIF stripping, HEIC conversion, compression, resizing
+- `metadata()` - Extracts MIME type, size, dimensions, duration
+- `clearCache()` - Clears cache and temp directories
 
-#### `react-native-zero-permission-picker.podspec` ✅
+#### `react-native-files-picker.podspec` ✅
 - Proper CocoaPods pod specification
-- iOS 15+ deployment target
+- iOS 14+ deployment target
 - React-Core dependency
 
 #### `ios/iOS_SETUP.md` ✅
@@ -156,7 +156,7 @@ All components have been implemented and documented.
 - **Usage examples** for all picker types
 - **API reference** with parameter descriptions
 - **Type definitions** exported
-- **Platform-specific details** (Android 13+, iOS 15+)
+- **Platform-specific details** (Android 13+, iOS 14+)
 - **Example app instructions**
 - **Permissions & Privacy** explanation
 - **Limitations** clearly stated
@@ -213,7 +213,7 @@ All components have been implemented and documented.
 - **Android 13+**: System Photo Picker (MediaStore.ACTION_PICK_IMAGES)
 - **Android ≤12**: Storage Access Framework (ACTION_OPEN_DOCUMENT)
 - **iOS 16+**: PHPickerViewController (scoped access)
-- **iOS 15**: UIImagePickerController (scoped access)
+- **iOS 14/15**: UIImagePickerController (scoped access)
 - **No permissions requested**: Uses temporary scoped access only
 
 ### ✅ Unified TypeScript API
@@ -330,7 +330,7 @@ Return PickedItem[]
 ### iOS
 - **Minimum iOS**: 15
 - **Modern (iOS 16+)**: PHPickerViewController
-- **Legacy (iOS 15)**: UIImagePickerController
+- **Legacy (iOS 14/15)**: UIImagePickerController
 - **Permissions**: ZERO (no Photo Library permission needed)
 
 ## File Count & Lines of Code
@@ -408,6 +408,6 @@ MIT - Free for commercial and personal use
 
 ---
 
-**Project: react-native-zero-permission-picker**
+**Project: react-native-files-picker**
 **Status: ✅ Complete & Ready for Production**
 **Version: 0.1.0**

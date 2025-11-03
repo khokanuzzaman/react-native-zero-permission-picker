@@ -1,6 +1,6 @@
 # Screenshot Capture Guide
 
-This guide helps you capture screenshots for the `react-native-zero-permission-picker` documentation.
+This guide helps you capture screenshots for the `react-native-files-picker` documentation.
 
 ## Prerequisites
 
@@ -56,8 +56,8 @@ This guide helps you capture screenshots for the `react-native-zero-permission-p
 - [ ] Take screenshot of PHPickerViewController
 - [ ] Save as: `docs/screenshots/ios-phpicker.png`
 
-#### iOS Image Picker (15)
-- [ ] Use iOS 15 device
+#### iOS Image Picker (14/15)
+- [ ] Use iOS 14 or 15 device
 - [ ] Take screenshot of UIImagePickerController
 - [ ] Save as: `docs/screenshots/ios-image-picker.png`
 

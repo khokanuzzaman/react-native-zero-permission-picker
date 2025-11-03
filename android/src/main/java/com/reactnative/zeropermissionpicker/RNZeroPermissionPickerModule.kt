@@ -5,11 +5,11 @@ import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.OpenableColumns
 import androidx.fragment.app.FragmentActivity
-import android.util.Log
 import com.facebook.react.bridge.ActivityEventListener
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise
@@ -20,6 +20,8 @@ import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.bridge.ReadableType
 import com.facebook.react.bridge.WritableArray
 import java.io.File
+import java.lang.SecurityException
+import java.util.UUID
 import kotlin.math.roundToInt
 
 class RNZeroPermissionPickerModule(
@@ -52,6 +54,8 @@ class RNZeroPermissionPickerModule(
       return
     }
 
+    val requestedKind = options.getString("kind") ?: "mixed"
+
     val pickerOptions =
         PickerOptions(
             multiple = options.getBooleanOrDefault("multiple", false),
@@ -61,16 +65,15 @@ class RNZeroPermissionPickerModule(
             quality = options.getDoubleOrDefault("quality", 0.9),
             maxLongEdge = options.getIntOrNull("maxLongEdge"),
             convertHeicToJpeg = options.getBooleanOrDefault("convertHeicToJpeg", true),
-            allowDirectories = false
+            allowDirectories = false,
+            includeFileSize = options.getBooleanOrDefault("includeFileSize", true),
+            includeDimensions = options.getBooleanOrDefault("includeDimensions", true)
         )
 
-    val mimeTypes = getMimeTypesForKind(options.getString("kind") ?: "mixed")
-    val requestType =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-          RequestType.MEDIA_PHOTO_PICKER
-        } else {
-          RequestType.MEDIA_SAF
-        }
+    val mimeTypes = getMimeTypesForKind(requestedKind)
+    val usePhotoPicker =
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && requestedKind == "image"
+    val requestType = if (usePhotoPicker) RequestType.MEDIA_PHOTO_PICKER else RequestType.MEDIA_SAF
     pendingRequest = PendingRequest(requestType, pickerOptions, promise)
 
     try {
@@ -79,7 +82,13 @@ class RNZeroPermissionPickerModule(
           "Launching ${requestType.name} for media. multiple=${pickerOptions.multiple}, " +
               "copyToCache=${pickerOptions.copyToCache}, compress=${pickerOptions.compress}")
       if (requestType == RequestType.MEDIA_PHOTO_PICKER) {
-        launchPhotoPicker(activity as FragmentActivity, mimeTypes, pickerOptions.multiple, requestType.requestCode)
+        val fragmentActivity = activity as? FragmentActivity
+        if (fragmentActivity == null) {
+          pendingRequest = null
+          promise.reject("NO_ACTIVITY", "Photo picker requires a FragmentActivity host.")
+          return
+        }
+        launchPhotoPicker(fragmentActivity, mimeTypes, pickerOptions.multiple, requestType.requestCode)
       } else {
         launchSaf(activity, mimeTypes, pickerOptions.multiple, pickerOptions.allowDirectories, requestType.requestCode)
       }
@@ -112,7 +121,9 @@ class RNZeroPermissionPickerModule(
             quality = 1.0,
             maxLongEdge = null,
             convertHeicToJpeg = false,
-            allowDirectories = options.getBooleanOrDefault("allowDirectories", false)
+            allowDirectories = options.getBooleanOrDefault("allowDirectories", false),
+            includeFileSize = options.getBooleanOrDefault("includeFileSize", true),
+            includeDimensions = options.getBooleanOrDefault("includeDimensions", true)
         )
 
     val mimeTypes = getMimeTypesForFileKind(options.getString("kind") ?: "any")
@@ -225,7 +236,7 @@ class RNZeroPermissionPickerModule(
     }
 
     try {
-      val result = processUris(uris, request)
+      val result = processUris(uris, request, data)
       Log.d(TAG, "Processed ${result.size()} items successfully")
       request.promise.resolve(result)
     } catch (e: Exception) {
@@ -264,36 +275,89 @@ class RNZeroPermissionPickerModule(
     return result
   }
 
-  private fun processUris(uris: List<Uri>, request: PendingRequest): WritableArray {
+  private fun persistUriPermissions(intent: Intent?, uris: List<Uri>) {
+    if (intent == null) {
+      return
+    }
+    val flags =
+        intent.flags and
+            (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+    if (flags == 0) {
+      return
+    }
+
+    uris.forEach { uri ->
+      try {
+        context.contentResolver.takePersistableUriPermission(uri, flags)
+      } catch (securityException: SecurityException) {
+        Log.w(TAG, "Failed to persist uri permission for $uri", securityException)
+      }
+    }
+  }
+
+  private fun processUris(uris: List<Uri>, request: PendingRequest, data: Intent?): WritableArray {
     val array = Arguments.createArray()
     val resolver = context.contentResolver
+    persistUriPermissions(data, uris)
 
     uris.forEach { originalUri ->
       val originalMimeType = resolver.getType(originalUri)
       var workingUri = originalUri
-
-      if (request.options.copyToCache) {
-        fileHelper.copyToCache(workingUri)?.let { workingUri = it }
-      }
-
-      if (request.options.stripExif && isImage(originalMimeType)) {
-        fileHelper.stripExifFromImage(workingUri)?.let { workingUri = it }
-      }
-
-      val shouldCompress =
-          (request.options.compress && isImage(originalMimeType)) ||
-              (request.options.convertHeicToJpeg && isHeic(originalMimeType))
-      if (shouldCompress) {
-        val quality = toQualityPercent(request.options.quality)
-        fileHelper.compressImage(workingUri, quality, request.options.maxLongEdge)?.let { workingUri = it }
-      }
+      var effectiveMimeType = originalMimeType
+      var exifStripped = false
 
       val displayName = resolveDisplayName(workingUri)
-      val map = fileHelper.getPickedItemMap(workingUri, displayName, emptyMap())
-      val loggedMime = map.getString("mimeType")
-      Log.d(TAG, "Item processed uri=$workingUri displayName=$displayName mimeType=$loggedMime")
-      if (!map.hasKey("mimeType") && originalMimeType != null) {
-        map.putString("mimeType", originalMimeType)
+
+      val allowDirectories = request.options.allowDirectories && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+      if (allowDirectories && DocumentsContract.isTreeUri(workingUri)) {
+        val map = Arguments.createMap().apply {
+          putString("id", UUID.randomUUID().toString())
+          putString("uri", workingUri.toString())
+          putString("displayName", displayName ?: "directory")
+          putString("mimeType", "vnd.android.document/directory")
+        }
+        array.pushMap(map)
+        return@forEach
+      }
+
+      if (isImage(effectiveMimeType)) {
+        val transformation =
+            fileHelper.transformImageIfNeeded(
+                workingUri,
+                effectiveMimeType,
+                request.options.stripExif,
+                toQualityPercent(request.options.quality),
+                request.options.maxLongEdge,
+                request.options.convertHeicToJpeg,
+                request.options.compress)
+        if (transformation != null) {
+          workingUri = transformation.uri
+          effectiveMimeType = transformation.mimeType ?: effectiveMimeType
+          exifStripped = exifStripped || transformation.exifStripped
+        }
+      }
+
+      if (request.options.copyToCache) {
+        fileHelper.copyToCache(workingUri, displayName, effectiveMimeType)?.let { cachedUri ->
+          workingUri = cachedUri
+          effectiveMimeType = resolver.getType(workingUri) ?: effectiveMimeType
+        }
+      }
+
+      val finalDisplayName = resolveDisplayName(workingUri)
+      val map =
+          fileHelper.getPickedItemMap(
+              workingUri,
+              finalDisplayName,
+              request.options.includeFileSize,
+              request.options.includeDimensions,
+              request.options.includeDimensions)
+      Log.d(
+          TAG,
+          "Item processed uri=$workingUri displayName=$displayName mimeType=${map.getString("mimeType")} exifStripped=$exifStripped")
+      effectiveMimeType?.let { map.putString("mimeType", it) }
+      if (exifStripped) {
+        map.putBoolean("exifStripped", true)
       }
       array.pushMap(map)
     }
@@ -370,7 +434,9 @@ private data class PickerOptions(
     val quality: Double,
     val maxLongEdge: Int?,
     val convertHeicToJpeg: Boolean,
-    val allowDirectories: Boolean
+    val allowDirectories: Boolean,
+    val includeFileSize: Boolean,
+    val includeDimensions: Boolean
 )
 
 private data class PendingRequest(

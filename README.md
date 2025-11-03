@@ -1,17 +1,17 @@
-# React Native Zero Permission Picker
+# React Native Files Picker
 
-[![npm version](https://badge.fury.io/js/react-native-zero-permission-picker.svg)](https://badge.fury.io/js/react-native-zero-permission-picker)
+[![npm version](https://badge.fury.io/js/react-native-files-picker.svg)](https://badge.fury.io/js/react-native-files-picker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
-[![Downloads](https://img.shields.io/npm/dm/react-native-zero-permission-picker.svg)](https://www.npmjs.com/package/react-native-zero-permission-picker)
-[![GitHub stars](https://img.shields.io/github/stars/khokanuzzman/react-native-zero-permission-picker.svg)](https://github.com/khokanuzzman/react-native-zero-permission-picker)
+[![Downloads](https://img.shields.io/npm/dm/react-native-files-picker.svg)](https://www.npmjs.com/package/react-native-files-picker)
+[![GitHub stars](https://img.shields.io/github/stars/khokanuzzman/react-native-files-picker.svg)](https://github.com/khokanuzzman/react-native-files-picker)
 
 <div align="center">
-  <img src="docs/screenshots/example-app-main.jpeg" alt="React Native Zero Permission Picker Demo" width="300" />
+  <img src="docs/screenshots/example-app-main.jpeg" alt="React Native Files Picker Demo" width="300" />
   
-  <h3>🚀 Zero-Permission File Picker for React Native</h3>
+  <h3>🚀 Zero-Permission Files Picker for React Native</h3>
   
-  <p><strong>Select images, videos, and documents on iOS and Android without requesting storage permissions</strong></p>
+  <p><strong>Pick images, videos, PDFs, and documents on iOS and Android without requesting storage permissions</strong></p>
   
   <p>
     <a href="#-quick-start">Quick Start</a> •
@@ -49,7 +49,7 @@
 
 ```bash
 # Install the package
-npm install react-native-zero-permission-picker
+npm install react-native-files-picker
 
 # iOS setup
 cd ios && pod install && cd ..
@@ -58,7 +58,7 @@ cd ios && pod install && cd ..
 ```
 
 ```typescript
-import { pickMedia, pickFiles } from 'react-native-zero-permission-picker';
+import { pickMedia, pickFiles } from 'react-native-files-picker';
 
 // Pick images with zero permissions
 const images = await pickMedia('image', { multiple: true });
@@ -68,7 +68,7 @@ const images = await pickMedia('image', { multiple: true });
 
 - **🚫 Zero permissions**: No storage/photo/video permission prompts
 - **📱 Modern APIs**: Android Photo Picker (API 33+) & iOS PHPicker
-- **🔄 Compatible**: SAF fallback for Android ≤12, UIImagePickerController for iOS 15
+- **🔄 Compatible**: SAF fallback for Android ≤12, UIImagePickerController for iOS 14/15
 - **🧩 Simple API**: Tiny surface area with sensible defaults
 - **⚡ Production ready**: TypeScript types, validation, tests
 
@@ -99,7 +99,7 @@ const images = await pickMedia('image', { multiple: true });
 
 - 🚫 **Zero permissions** – no storage/photo/video prompts
 - 📱 **Modern APIs** – Android Photo Picker + iOS PHPicker
-- 🔄 **Backwards compatible** – SAF on Android ≤12, UIImagePickerController on iOS 15
+- 🔄 **Backwards compatible** – SAF on Android ≤12, UIImagePickerController on iOS 14/15
 - 🎯 **Multiple Selection** - Pick multiple files at once
 - 🖼️ **Image Processing** - Optional compression and EXIF stripping
 - 📊 **Rich Metadata** - File size, dimensions, duration, MIME type
@@ -127,13 +127,13 @@ const images = await pickMedia('image', { multiple: true });
 
 ```bash
 # Install the package
-npm install react-native-zero-permission-picker
+npm install react-native-files-picker
 
 # Or with yarn
-yarn add react-native-zero-permission-picker
+yarn add react-native-files-picker
 
 # Or with pnpm
-pnpm add react-native-zero-permission-picker
+pnpm add react-native-files-picker
 ```
 
 ### iOS Setup
@@ -143,7 +143,7 @@ pnpm add react-native-zero-permission-picker
 cd ios && pod install && cd ..
 
 # For Expo projects
-npx expo install react-native-zero-permission-picker
+npx expo install react-native-files-picker
 ```
 
 ### Android Setup
@@ -156,7 +156,7 @@ npx expo install react-native-zero-permission-picker
 ### Basic Usage
 
 ```typescript
-import { pickMedia, pickFiles } from 'react-native-zero-permission-picker';
+import { pickMedia, pickFiles } from 'react-native-files-picker';
 
 // Pick images with zero permissions
 const images = await pickMedia('image', {
@@ -288,13 +288,13 @@ interface PickedItem {
 | iOS Version | Picker API | Features | Permissions Required |
 |-------------|------------|----------|---------------------|
 | **iOS 16+** | PHPickerViewController | Modern picker, multiple selection, scoped access | ❌ None |
-| **iOS 15** | UIImagePickerController | Single selection, basic picker | ❌ None |
-| **iOS 14-** | ❌ Not Supported | - | - |
+| **iOS 14-15** | UIImagePickerController | Single selection, basic picker | ❌ None |
+| **iOS <14** | ❌ Not Supported | - | - |
 
 **iOS Features:**
 - ✅ **Zero Permissions** - No photo library or storage permissions needed
 - ✅ **Modern PHPicker** - iOS 16+ uses the latest system picker
-- ✅ **Backward Compatible** - Falls back to UIImagePickerController on iOS 15
+- ✅ **Backward Compatible** - Falls back to UIImagePickerController on iOS 14/15
 - ✅ **Multiple Selection** - Pick multiple files at once (iOS 16+)
 - ✅ **Scoped Access** - Only access user-selected files
 - ✅ **TypeScript Support** - Full type definitions included
@@ -407,9 +407,9 @@ React Native image picker, React Native file picker, React Native document picke
 
 ## 📞 Support
 
-- 📖 [Documentation](https://github.com/yourusername/react-native-zero-permission-picker#readme)
-- 🐛 [Issues](https://github.com/yourusername/react-native-zero-permission-picker/issues)
-- 💬 [Discussions](https://github.com/yourusername/react-native-zero-permission-picker/discussions)
+- 📖 [Documentation](https://github.com/khokanuzzman/react-native-files-picker#readme)
+- 🐛 [Issues](https://github.com/khokanuzzman/react-native-files-picker/issues)
+- 💬 [Discussions](https://github.com/khokanuzzman/react-native-files-picker/discussions)
 
 ## 🙏 Acknowledgments
 

@@ -1,6 +1,6 @@
 # Screenshots
 
-This directory contains screenshots and demo images for the `react-native-zero-permission-picker` package.
+This directory contains screenshots and demo images for the `react-native-files-picker` package.
 
 ## Required Screenshots
 
@@ -15,7 +15,7 @@ This directory contains screenshots and demo images for the `react-native-zero-p
 - `android-photo-picker.png` - Android 13+ Photo Picker
 - `android-saf-picker.png` - Android ≤12 Storage Access Framework
 - `ios-phpicker.png` - iOS 16+ PHPickerViewController
-- `ios-image-picker.png` - iOS 15 UIImagePickerController fallback
+- `ios-image-picker.png` - iOS 14/15 UIImagePickerController fallback
 
 ### Permission Screenshots
 - `no-permissions-android.png` - Android app info showing no storage permissions

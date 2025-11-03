@@ -1,0 +1,10 @@
+# ninja log v5
+0	13	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1
+0	2184	1762153278053355659	CMakeFiles/appmodules.dir/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	8c6f3e72983dbac0
+1	2358	1762153278231276358	CMakeFiles/appmodules.dir/OnLoad.cpp.o	c47c0c0a222ebf1c
+2358	2422	1762153278300700124	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/build/intermediates/cxx/Debug/301w686x/obj/armeabi-v7a/libappmodules.so	7a451f93f7ef3090
+0	7	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1
+1	7	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1
+1	7	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1
+0	7	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1
+1	8	0	/Users/jotnosqh/Desktop/npm-packages/react-native-zero-permission-picker/example/android/app/.cxx/Debug/301w686x/armeabi-v7a/CMakeFiles/cmake.verify_globs	e94a2c1ad914b6b1

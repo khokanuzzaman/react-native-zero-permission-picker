@@ -17,7 +17,7 @@ import {
   isSystemPhotoPickerAvailable,
   PickedItem,
   PickError,
-} from 'react-native-zero-permission-picker';
+} from 'react-native-files-picker';
 
 const { width } = Dimensions.get('window');
 

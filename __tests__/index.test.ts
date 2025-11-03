@@ -6,7 +6,7 @@ import {
   PickError,
 } from '../src/index';
 
-describe('react-native-zero-permission-picker', () => {
+describe('react-native-files-picker', () => {
   describe('Type Exports', () => {
     it('should export MediaKind type', () => {
       // Type check only - this is a compilation test

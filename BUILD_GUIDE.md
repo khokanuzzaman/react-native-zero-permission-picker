@@ -173,11 +173,10 @@ fun clearCachedFiles(promise: Promise)
 ```
 
 **PickerFileHelper.kt**
-- `getPickedItemMap()` - Extract metadata
-- `copyToCache()` - Cache selected files
-- `stripExifFromImage()` - Remove EXIF
-- `compressImage()` - Compress with quality/resize
-- `clearCache()` - Clear cache directory
+- `persistFile()` - Copies SAF/Photo Picker URIs into app storage when needed
+- `transformImageIfNeeded()` - Handles EXIF stripping, HEIC conversion, compression, resizing
+- `metadata()` - Extracts filename, MIME type, dimensions, duration, size
+- `clearCache()` - Clears cache directory
 
 ### iOS Module (`ios/`)
 
@@ -185,7 +184,7 @@ fun clearCachedFiles(promise: Promise)
 ```swift
 @objc func pickMedia(_ options: NSDictionary, resolver: ..., rejecter: ...)
 // iOS 16+: PHPickerViewController
-// iOS 15: UIImagePickerController
+// iOS 14/15: UIImagePickerController fallback
 
 @objc func pickFiles(_ options: NSDictionary, resolver: ..., rejecter: ...)
 // UIDocumentPickerViewController for all file types
@@ -200,13 +199,13 @@ fun clearCachedFiles(promise: Promise)
 Delegates:
 - `PickerDelegate` - PHPickerViewController delegate
 - `DocumentPickerDelegate` - UIDocumentPickerViewController delegate
-- `ImagePickerDelegate` - UIImagePickerController delegate (iOS 15)
+- `ImagePickerDelegate` - UIImagePickerController delegate (iOS 14/15)
 
 **PickerFileHelper.swift**
-- `saveImageData()` - Save compressed image
-- `getPickedItemMap()` - Extract metadata
-- `clearCache()` - Clear cache
-- `getMimeType()` - Map extension to MIME type
+- `persistFile()` / `writeData()` - Ensure selected files have persisted URLs
+- `processImageIfNeeded()` - Handles EXIF stripping, HEIC conversion, compression, resizing
+- `metadata()` - Extract MIME type, size, dimensions, duration
+- `clearCache()` - Clear cache and temp directories
 
 ## Testing
 
@@ -288,7 +287,7 @@ cd ios && pod install && cd ..
 
 **Android**:
 ```bash
-npx react-native link react-native-zero-permission-picker
+npx react-native link react-native-files-picker
 ```
 
 ## Code Quality

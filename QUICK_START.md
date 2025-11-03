@@ -3,9 +3,9 @@
 ## Installation
 
 ```bash
-npm install react-native-zero-permission-picker
+npm install react-native-files-picker
 # or
-yarn add react-native-zero-permission-picker
+yarn add react-native-files-picker
 ```
 
 ### iOS Setup
@@ -19,7 +19,7 @@ cd ios && pod install && cd ..
 ### Pick Images
 
 ```typescript
-import { pickMedia } from 'react-native-zero-permission-picker';
+import { pickMedia } from 'react-native-files-picker';
 
 const pickImages = async () => {
   try {
@@ -58,7 +58,7 @@ const pickVideos = async () => {
 ### Pick Any Files
 
 ```typescript
-import { pickFiles } from 'react-native-zero-permission-picker';
+import { pickFiles } from 'react-native-files-picker';
 
 const pickFiles = async () => {
   const items = await pickFiles('any', {
@@ -112,7 +112,7 @@ import { Image } from 'react-native';
 ## Check Photo Picker Availability
 
 ```typescript
-import { isSystemPhotoPickerAvailable } from 'react-native-zero-permission-picker';
+import { isSystemPhotoPickerAvailable } from 'react-native-files-picker';
 
 const checkAvailability = async () => {
   const available = await isSystemPhotoPickerAvailable();
@@ -127,7 +127,7 @@ const checkAvailability = async () => {
 ## Clear Cache
 
 ```typescript
-import { clearCachedFiles } from 'react-native-zero-permission-picker';
+import { clearCachedFiles } from 'react-native-files-picker';
 
 const clearCache = async () => {
   try {
@@ -142,7 +142,7 @@ const clearCache = async () => {
 ## Error Handling
 
 ```typescript
-import { PickError } from 'react-native-zero-permission-picker';
+import { PickError } from 'react-native-files-picker';
 
 try {
   const items = await pickMedia('image', { multiple: true });

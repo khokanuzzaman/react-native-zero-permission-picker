@@ -1,6 +1,6 @@
 # Zero Permission Picker Example App
 
-This is a working example demonstrating how to use the `react-native-zero-permission-picker` package.
+This is a working example demonstrating how to use the `react-native-files-picker` package.
 
 ## Features Demonstrated
 
@@ -92,7 +92,7 @@ When the app launches, you'll see:
 
 #### iOS
 - **iOS 14+**: PHPickerViewController opens
-- **iOS 15**: UIImagePickerController as fallback
+- **iOS 14/15**: UIImagePickerController as fallback
 - **Files** accessible via returned URIs
 
 ## Example Output

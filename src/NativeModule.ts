@@ -1,8 +1,8 @@
 import { NativeModules, Platform } from 'react-native';
 
-const LINKING_ERROR = `The package 'react-native-zero-permission-picker' doesn't seem to be linked. 
+const LINKING_ERROR = `The package 'react-native-files-picker' doesn't seem to be linked. 
 Make sure:
-- You have run \`npm install react-native-zero-permission-picker\`
+- You have run \`npm install react-native-files-picker\`
 - You rebuilt the app after installing the package
 - You have Android/iOS native modules properly configured`;
 

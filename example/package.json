@@ -1,5 +1,5 @@
 {
-  "name": "react-native-zero-permission-picker-example",
+  "name": "react-native-files-picker-example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "19.1.1",
     "react-native": "0.82.0",
-    "react-native-zero-permission-picker": "file:.."
+    "react-native-files-picker": "file:.."
   },
   "devDependencies": {
     "@babel/core": "^7.25.0",

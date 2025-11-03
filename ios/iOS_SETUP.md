@@ -12,7 +12,7 @@ If you need to link manually:
 
 ```ruby
 target 'YourAppName' do
-  pod 'react-native-zero-permission-picker', :path => '../node_modules/react-native-zero-permission-picker'
+  pod 'react-native-files-picker', :path => '../node_modules/react-native-files-picker'
 end
 ```
 
@@ -38,10 +38,9 @@ No permissions are required in `Info.plist`. The system pickers don't require pr
 
 ## Supported iOS Versions
 
-- **iOS 15+**: Fully supported
-- **iOS 16+**: Uses modern PHPickerViewController
-- **iOS 15**: Falls back to UIImagePickerController
-- **iOS 14 and below**: Not supported
+- **iOS 16+**: Uses modern PHPickerViewController with multi-select
+- **iOS 14-15**: Falls back to UIImagePickerController (single select)
+- **iOS <14**: Not supported
 
 ## Framework Dependencies
 
@@ -57,7 +56,7 @@ These are standard iOS frameworks included in the build.
 
 The module is written in Swift and requires:
 - Swift 5.0+
-- iOS deployment target: 15.0+
+- iOS deployment target: 14.0+
 
 Xcode will handle Swift interoperability automatically for Objective-C projects.
 

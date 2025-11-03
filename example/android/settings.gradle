@@ -9,5 +9,5 @@ rootProject.name = 'ZeroPermissionPickerExample'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
 
-include ':react-native-zero-permission-picker'
-project(':react-native-zero-permission-picker').projectDir = file('../node_modules/react-native-zero-permission-picker/android')
+include ':react-native-files-picker'
+project(':react-native-files-picker').projectDir = file('../node_modules/react-native-files-picker/android')

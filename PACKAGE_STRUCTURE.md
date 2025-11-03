@@ -3,7 +3,7 @@
 ## Directory Layout
 
 ```
-react-native-zero-permission-picker/
+react-native-files-picker/
 ├── src/                           # TypeScript source files
 │   ├── index.ts                  # Main API exports and type definitions
 │   ├── NativeModule.ts           # Bridge to native modules
@@ -27,7 +27,7 @@ react-native-zero-permission-picker/
 ├── package.json                  # Package metadata and dependencies
 ├── tsconfig.json                 # TypeScript configuration
 ├── jest.config.js                # Jest test configuration
-├── react-native-zero-permission-picker.podspec  # iOS CocoaPods spec
+├── react-native-files-picker.podspec  # iOS CocoaPods spec
 ├── README.md                     # Main documentation
 ├── LICENSE                       # MIT License
 ├── PACKAGE_STRUCTURE.md          # This file
@@ -68,11 +68,11 @@ The public API is defined in TypeScript with full type safety:
 - Delegates handle different picker types:
   - `PickerDelegate`: Handles PHPickerViewController (iOS 16+)
   - `DocumentPickerDelegate`: Handles UIDocumentPickerViewController
-  - `ImagePickerDelegate`: Handles UIImagePickerController (iOS 15)
+  - `ImagePickerDelegate`: Handles UIImagePickerController (iOS 14/15)
 
 **Implementation Strategy**:
 - iOS 16+: Uses PHPickerViewController (modern, no permissions)
-- iOS 15: Fallback to UIImagePickerController (requires no manifest permissions)
+- iOS 14/15: Fallback to UIImagePickerController (no photo library permissions required)
 - No Photo Library permissions are requested
 
 ### Example App (`example/`)
@@ -153,7 +153,7 @@ All errors are wrapped in `PickError` with standardized codes:
 
 **iOS**:
 - PHPicker (iOS 16+): Scoped access, no Photo Library permission needed
-- UIImagePickerController (iOS 15): Scoped access, no Photo Library permission needed
+- UIImagePickerController (iOS 14/15): Scoped access, no Photo Library permission needed
 - UIDocumentPicker: No permissions required for scoped file access
 
 ## Build & Distribution
@@ -175,7 +175,7 @@ Files included in distribution:
 - `lib/` - Compiled JavaScript with type definitions
 - `android/` - Android native module
 - `ios/` - iOS native module
-- `react-native-zero-permission-picker.podspec` - CocoaPods spec
+- `react-native-files-picker.podspec` - CocoaPods spec
 - `README.md`, `LICENSE`, `package.json`
 
 ## Compatibility
@@ -185,8 +185,8 @@ Files included in distribution:
 - Supports 0.61+ up to latest versions
 
 ### iOS
-- Minimum: iOS 15
-- Target: iOS 15+ (iOS 16+ uses PHPicker, iOS 15 uses legacy UIImagePickerController)
+- Minimum: iOS 14
+- Target: iOS 14+ (iOS 16+ uses PHPicker, iOS 14/15 use legacy UIImagePickerController)
 
 ### Android
 - Minimum: API 21 (Android 5.0)

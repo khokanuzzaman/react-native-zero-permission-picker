@@ -49,5 +49,5 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-    implementation(project(":react-native-zero-permission-picker"))
+    implementation(project(":react-native-files-picker"))
 }

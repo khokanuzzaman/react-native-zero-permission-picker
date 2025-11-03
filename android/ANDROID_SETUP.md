@@ -11,8 +11,8 @@ If you need to link manually:
 ### 1. Update `android/settings.gradle`
 
 ```gradle
-include ':react-native-zero-permission-picker'
-project(':react-native-zero-permission-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-zero-permission-picker/android')
+include ':react-native-files-picker'
+project(':react-native-files-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-files-picker/android')
 ```
 
 ### 2. Update `android/app/build.gradle`
@@ -20,7 +20,7 @@ project(':react-native-zero-permission-picker').projectDir = new File(rootProjec
 ```gradle
 dependencies {
     // ... existing dependencies ...
-    implementation project(':react-native-zero-permission-picker')
+    implementation project(':react-native-files-picker')
 }
 ```
 

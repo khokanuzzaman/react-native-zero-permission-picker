@@ -15,7 +15,7 @@ This file lists the required screenshots that need to be captured:
 - android-photo-picker.png - Android 13+ Photo Picker
 - android-saf-picker.png - Android ≤12 Storage Access Framework
 - ios-phpicker.png - iOS 16+ PHPickerViewController
-- ios-image-picker.png - iOS 15 UIImagePickerController
+- ios-image-picker.png - iOS 14/15 UIImagePickerController
 
 ### Permissions (2 screenshots)
 - no-permissions-android.png - Android app settings showing no permissions
