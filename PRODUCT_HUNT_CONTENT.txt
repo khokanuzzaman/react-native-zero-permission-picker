@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════════════
+PRODUCT HUNT SUBMISSION CONTENT - READY TO COPY/PASTE
+═══════════════════════════════════════════════════════════════════
+
+PRODUCT NAME:
+───────────────────────────────────────────────────────────────────
+React Native Files Picker
+
+
+TAGLINE (60 chars max):
+───────────────────────────────────────────────────────────────────
+Zero-permission file picker for React Native apps
+
+
+DESCRIPTION (260 chars max):
+───────────────────────────────────────────────────────────────────
+Pick images, videos, PDFs & documents without requesting storage permissions. Uses Android Photo Picker & iOS PHPicker for privacy-friendly file selection. Perfect for React Native developers who care about user privacy.
+
+
+MAKER COMMENT (First Comment):
+───────────────────────────────────────────────────────────────────
+Hi Product Hunt! 👋
+
+I'm excited to share React Native Files Picker - a zero-permission file picker for React Native apps.
+
+🔑 The Problem:
+Most file picker libraries require storage permissions, which creates privacy concerns and can hurt app store ratings. Users are becoming increasingly privacy-conscious.
+
+✨ The Solution:
+React Native Files Picker uses modern platform APIs (Android Photo Picker & iOS PHPicker) that don't require any permissions. Your app only gets access to files the user explicitly selects.
+
+🎯 Key Features:
+• 🚫 Zero permissions required
+• 📱 Modern APIs (Android 13+ Photo Picker, iOS PHPicker)
+• 🔄 Backward compatible (SAF fallback for older Android)
+• 🎯 Simple API - just 2 functions
+• ⚡ Production ready with TypeScript support
+• 📊 Rich metadata (file size, dimensions, duration)
+
+💻 Quick Start:
+```typescript
+import { pickMedia } from 'react-native-files-picker';
+
+const images = await pickMedia('image', { multiple: true });
+```
+
+That's it! No permissions, no configuration - just works.
+
+🚀 Built for React Native developers who want:
+- Privacy-first file selection
+- Better app store ratings
+- Modern platform APIs
+- Simple, clean API
+
+I'd love to hear your thoughts and feedback! What would make this even better for your use case?
+
+📚 Links:
+• GitHub: https://github.com/khokanuzzaman/react-native-zero-permission-picker
+• npm: https://www.npmjs.com/package/react-native-files-picker
+
+Thanks for checking it out! 🙏
+
+
+LINKS TO ADD:
+───────────────────────────────────────────────────────────────────
+GitHub: https://github.com/khokanuzzaman/react-native-zero-permission-picker
+npm: https://www.npmjs.com/package/react-native-files-picker
+Website: (add if you have one)
+
+
+TWEET SUGGESTION:
+───────────────────────────────────────────────────────────────────
+🚀 Just launched on Product Hunt!
+
+React Native Files Picker - Zero-permission file picker for React Native apps
+
+No storage permissions needed. Privacy-first. Modern APIs.
+
+Check it out: [Product Hunt Link]
+
+#ReactNative #OpenSource #Privacy #ProductHunt
+
+
+LINKEDIN POST SUGGESTION:
+───────────────────────────────────────────────────────────────────
+Excited to share my latest open-source project on Product Hunt!
+
+React Native Files Picker solves a common problem for mobile developers: how to let users pick files without requesting invasive storage permissions.
+
+Built with modern platform APIs (Android Photo Picker & iOS PHPicker), this library provides a privacy-first solution that's simple to use.
+
+Would love your support: [Product Hunt Link]
+
+#ReactNative #OpenSource #MobileDevelopment #Privacy
+
+
+═══════════════════════════════════════════════════════════════════
+
