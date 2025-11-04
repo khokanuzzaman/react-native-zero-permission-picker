@@ -5,6 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Downloads](https://img.shields.io/npm/dm/react-native-files-picker.svg)](https://www.npmjs.com/package/react-native-files-picker)
 [![GitHub stars](https://img.shields.io/github/stars/khokanuzzman/react-native-files-picker.svg)](https://github.com/khokanuzzman/react-native-files-picker)
+[![React Native Directory](https://img.shields.io/badge/React%20Native%20Directory-✅-brightgreen)](https://reactnative.directory/?search=react-native-files-picker)
 
 <div align="center">
   <img src="docs/screenshots/example-app-main.jpeg" alt="React Native Files Picker Demo" width="300" />
