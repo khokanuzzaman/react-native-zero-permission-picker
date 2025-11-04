@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Downloads](https://img.shields.io/npm/dm/react-native-files-picker.svg)](https://www.npmjs.com/package/react-native-files-picker)
-[![GitHub stars](https://img.shields.io/github/stars/khokanuzzman/react-native-files-picker.svg)](https://github.com/khokanuzzman/react-native-files-picker)
+[![GitHub stars](https://img.shields.io/github/stars/khokanuzzaman/react-native-zero-permission-picker.svg)](https://github.com/khokanuzzaman/react-native-zero-permission-picker)
 [![React Native Directory](https://img.shields.io/badge/React%20Native%20Directory-✅-brightgreen)](https://reactnative.directory/?search=react-native-files-picker)
 
 <div align="center">
@@ -408,9 +408,9 @@ React Native image picker, React Native file picker, React Native document picke
 
 ## 📞 Support
 
-- 📖 [Documentation](https://github.com/khokanuzzman/react-native-files-picker#readme)
-- 🐛 [Issues](https://github.com/khokanuzzman/react-native-files-picker/issues)
-- 💬 [Discussions](https://github.com/khokanuzzman/react-native-files-picker/discussions)
+- 📖 [Documentation](https://github.com/khokanuzzaman/react-native-zero-permission-picker#readme)
+- 🐛 [Issues](https://github.com/khokanuzzaman/react-native-zero-permission-picker/issues)
+- 💬 [Discussions](https://github.com/khokanuzzaman/react-native-zero-permission-picker/discussions)
 
 ## 🙏 Acknowledgments
 

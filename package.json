@@ -76,12 +76,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/khokanuzzman/react-native-files-picker.git"
+    "url": "https://github.com/khokanuzzaman/react-native-zero-permission-picker.git"
   },
   "bugs": {
-    "url": "https://github.com/khokanuzzman/react-native-files-picker/issues"
+    "url": "https://github.com/khokanuzzaman/react-native-zero-permission-picker/issues"
   },
-  "homepage": "https://github.com/khokanuzzman/react-native-files-picker#readme",
+  "homepage": "https://github.com/khokanuzzaman/react-native-zero-permission-picker#readme",
   "engines": {
     "node": ">=14.0.0"
   }
