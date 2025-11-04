@@ -1,6 +1,6 @@
 {
   "name": "react-native-files-picker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React Native file & media picker with ZERO permissions. Android Photo Picker (API 33+), iOS PHPicker, and SAF fallback. Pick images, videos, PDFs, and documents without storage permissions.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
